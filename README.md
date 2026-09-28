@@ -45,3 +45,7 @@ python3 scripts/sync-spec.py check /absolute/path/to/OmniRead
 修改 `content/` 或 `assets/` 后，运行 `npm run build` 和 `npm run check`，提交并推送到发布分支。GitHub Actions 会重新构建、检查链接、测试演示服务，并把 `dist/` 发布到 Pages。也可在仓库 Actions 页面手动运行 Deploy documentation。以 Actions 部署成功及公网访问结果为准。
 
 生成目录 `dist/` 不提交。原 Sites 的本地站点记录留在忽略的 `.openai/` 中，GitHub Pages 不读取它，也不会上传它。此独立仓库只包含公开文档及网站源码，不包含 iOS APP 源码或内部验收记录。
+
+## NAS 适配示例
+
+`content/nas.md` 和 `content/nas-webdav/` 是网站独立维护的 WebDAV → TXT 书源示例，不属于 APP 运行时代码。修改后运行 `python3 -m unittest discover -s content/nas-webdav`；CI 同样执行。`scripts/package-kits.py` 只从明确的公开文件列表打包，新增文件应显式评审后加入。实际 NAS 配置 `.env` 和 `secrets/` 永远不打包。核心规范同步脚本暂不包含这份独立服务示例。

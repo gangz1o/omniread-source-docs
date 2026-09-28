@@ -21,6 +21,7 @@ jobs:
       - run: npm run build
       - run: npm run check
       - run: python3 -m unittest discover -s content/demo -p 'test_*.py'
+      - run: python3 -m unittest discover -s content/nas-webdav -p 'test_*.py'
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -1,0 +1,22 @@
+services:
+  omniread-webdav:
+    build: .
+    ports:
+      - "127.0.0.1:8766:8766"
+    environment:
+      WEBDAV_URL: ${WEBDAV_URL:?Set the WebDAV collection URL}
+      WEBDAV_USERNAME: ${WEBDAV_USERNAME:?Set the read-only NAS user}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:?Set the device-trusted HTTPS origin}
+      WEBDAV_PASSWORD_FILE: /run/secrets/webdav_password
+      BRIDGE_API_KEY_FILE: /run/secrets/bridge_api_key
+    secrets:
+      - webdav_password
+      - bridge_api_key
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+secrets:
+  webdav_password:
+    file: ./secrets/webdav_password
+  bridge_api_key:
+    file: ./secrets/bridge_api_key

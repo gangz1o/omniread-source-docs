@@ -1,0 +1,52 @@
+{
+  "bookSourceName": "我的 NAS · TXT 小说",
+  "bookSourceUrl": "https://your-bridge.example/nas/",
+  "bookSourceType": 0,
+  "bookSourceVersion": "1.0.0",
+  "bookSourceGroup": "私人书库",
+  "bookSourceComment": "WebDAV 适配示例；请在自己的 NAS 或局域网运行配套服务，导入其 /source.json。访问密钥在 APP 登录页输入，不是 NAS 密码。",
+  "enabled": true,
+  "concurrentRate": "3/1000",
+  "header": "{\"Accept\":\"application/json\"}",
+  "searchUrl": "/nas/search?q={{key}}&page={{page}}",
+  "exploreUrl": "NAS 小说::/nas/explore?page={{page}}",
+  "ruleSearch": {
+    "bookList": "$.books[*]",
+    "name": "$.title",
+    "author": "$.author",
+    "kind": "$.tags[*]",
+    "intro": "$.intro",
+    "coverUrl": "$.cover",
+    "bookUrl": "$.url",
+    "lastChapter": "$.lastChapter"
+  },
+  "ruleExplore": {
+    "bookList": "$.books[*]",
+    "name": "$.title",
+    "author": "$.author",
+    "coverUrl": "$.cover",
+    "bookUrl": "$.url"
+  },
+  "ruleBookInfo": {
+    "name": "$.title",
+    "author": "$.author",
+    "intro": "$.intro",
+    "coverUrl": "$.cover",
+    "tocUrl": "$.toc"
+  },
+  "ruleToc": {
+    "chapterList": "$.chapters[*]",
+    "chapterName": "$.title",
+    "chapterUrl": "$.url",
+    "nextTocUrl": "$.next"
+  },
+  "ruleContent": {
+    "content": "$.text"
+  },
+  "omnireadLogin": {
+    "version": 1,
+    "type": "apiKey",
+    "loginUrl": "https://your-bridge.example/nas/login",
+    "sessionUrl": "https://your-bridge.example/nas/session"
+  }
+}

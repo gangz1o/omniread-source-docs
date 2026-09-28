@@ -9,6 +9,7 @@ const pages = [
   ['authentication', 'authentication', '登录接入', '账号密码、API 密钥与网页登录。'],
   ['server', 'server', '自建服务与联调', '运行示例服务，验证完整阅读流程。'],
   ['validation', 'validation', '校验与发布', '从结构检查到真实设备验收。'],
+  ['nas', 'nas', 'NAS / WebDAV 接入', '把自己的 NAS 小说库接入云书阁。'],
   ['downloads', null, '示例与下载', '完整书源、JSON Schema 和本地演示服务。'],
 ];
 const exampleNames = {novel:'小说', comic:'漫画', audio:'有声书', video:'短剧', account:'账号密码登录', key:'API 密钥登录'};
@@ -18,22 +19,10 @@ mkdirSync('dist', {recursive:true});
 cpSync('assets', 'dist/assets', {recursive:true});
 cpSync('content/examples', 'dist/examples', {recursive:true});
 cpSync('content/source.schema.json', 'dist/source.schema.json');
-// Reproducible archive; only the explicitly public author resources are included.
-execFileSync('python3', ['-c', `from pathlib import Path
-import zipfile, re
-root=Path('content')
-with zipfile.ZipFile('dist/omniread-source-kit.zip','w',zipfile.ZIP_DEFLATED) as z:
- for path in sorted(root.rglob('*')):
-  if path.is_file() and '__pycache__' not in path.parts and not path.name.startswith('.'):
-   info=zipfile.ZipInfo('omniread-source-kit/'+str(path.relative_to(root)),(2026,9,28,0,0,0))
-   info.compress_type=zipfile.ZIP_DEFLATED
-   data=path.read_bytes()
-   if path.name=='README.md' and path.parent==root:
-    data=re.sub(r'^8\\. \\[维护说明\\].*\\n','',data.decode(),flags=re.M).encode()
-   z.writestr(info,data)
- info=zipfile.ZipInfo('omniread-source-kit/START_HERE.md',(2026,9,28,0,0,0))
- z.writestr(info,'# 独立资料包\\n\\n在本目录运行 python3 demo/server.py，访问 http://127.0.0.1:8765/sources.json。运行回归：python3 -m unittest discover -s demo。\\n\\n规范文档中的 docs/book-source/ 指 APP 仓库路径；独立资料包中去掉此前缀即可。Swift 命令需要另行取得 APP 源码，本包不包含 Swift 校验器。登录联调需要设备信任的 HTTPS，详见 server.md。\\n')
-`]);
+// Explicit file lists exclude credentials and local deployment configuration.
+mkdirSync('dist/nas-webdav', {recursive:true});
+cpSync('content/nas-webdav/source.json', 'dist/nas-webdav/source.json');
+execFileSync('python3', ['scripts/package-kits.py'], {stdio:'inherit'});
 const iconLinks = (prefix = '') => `<link rel="icon" type="image/png" sizes="240x240" href="${prefix}assets/app-icon-default.png"><link rel="icon" type="image/png" sizes="240x240" href="${prefix}assets/app-icon-default-dark.png" media="(prefers-color-scheme: dark)">`;
 
 for (let position=0; position<pages.length; position++) {
@@ -50,7 +39,7 @@ for (let position=0; position<pages.length; position++) {
     return `<h${depth} id="${id}">${text}<a class="anchor" href="#${id}" aria-label="链接到此节">#</a></h${depth}>`;
   };
   renderer.link = function({href,title,tokens}) {
-    href = href.replace(/^README\.md/, 'index.html').replace(/^(rules|media|authentication|server|validation)\.md/, '$1.html');
+    href = href.replace(/^README\.md/, 'index.html').replace(/^(rules|media|authentication|server|validation|nas)\.md/, '$1.html');
     const download = /(?:\.json|\.zip)$/.test(href) ? ' download' : '';
     return `<a href="${escape(href)}"${download}${title?` title="${escape(title)}"`:''}>${this.parser.parseInline(tokens)}</a>`;
   };
@@ -69,11 +58,12 @@ for (let position=0; position<pages.length; position++) {
   } else {
     body=`<p>选择与你的内容和认证方式匹配的示例，替换占位域名后再导入 APP。所有文件均为可编辑的原始配置。</p>
     <div class="example-grid">${Object.entries(exampleNames).map(([key,label],i)=>`<a class="example" href="examples/${key}.json" download><span class="example-number">0${i+1}</span><strong>${label}</strong><code>${key}.json</code><span class="download-label">下载 JSON ↓</span></a>`).join('')}</div>
+    <h2 id="nas-kit">NAS / WebDAV 示例</h2><p>将自己的 WebDAV 小说目录转换为可登录的 TXT 书源，包含 Python 适配器、Docker 配置、JSON 模板及测试。</p><p><a href="nas.html">阅读接入指南</a> · <a href="nas-webdav/source.json" download>下载书源模板</a></p><p><a class="button" href="omniread-webdav-kit.zip" download>下载 NAS 专用示例包 ↓</a></p>
     <h2 id="schema">JSON Schema</h2><p>用于编辑器中的字段、类型和必填项检查。它不能替代真实接口和设备联调。</p><p><a class="button" href="source.schema.json" download>下载 source.schema.json ↓</a></p>
-    <h2 id="kit">完整开发者资料包</h2><p>包含六份书源、六篇 Markdown 文档、Schema、Python 演示服务、固定响应和自制测试视频。仅依赖 Python 3 标准库即可运行演示服务。</p><p><a class="button" href="omniread-source-kit.zip" download>下载资料包 ZIP ↓</a></p>
+    <h2 id="kit">完整开发者资料包</h2><p>包含六份书源、完整 Markdown 文档、Schema、NAS 适配示例、Python 演示服务、固定响应和自制测试视频。仅依赖 Python 3 标准库即可运行演示服务。</p><p><a class="button" href="omniread-source-kit.zip" download>下载资料包 ZIP ↓</a></p>
     <pre><code>cd omniread-source-kit\npython3 demo/server.py</code></pre><p>启动后访问 <code>http://127.0.0.1:8765/sources.json</code>。原生登录需要设备信任的 HTTPS；具体步骤见<a href="server.html">自建服务与联调</a>。</p>
     <div class="note">示例中的 <code>demo.omniread.invalid</code> 是占位地址，没有在线演示服务。资料包不包含 APP 源码或 Swift 校验器。</div>`;
-    toc=[['schema','JSON Schema'],['kit','完整开发者资料包']];
+    toc=[['nas-kit','NAS / WebDAV 示例'],['schema','JSON Schema'],['kit','完整开发者资料包']];
   }
   body=body.replace(/<table>/g,'<div class="table-scroll" tabindex="0" role="region" aria-label="字段参考表，可横向滚动"><table>').replace(/<\/table>/g,'</table></div>');
   const nav=pages.map(([path,,label],i)=>`<a href="${path}.html" ${path===route?'aria-current="page"':''}><span class="nav-number">0${i+1}</span>${label}</a>`).join('');

@@ -22,4 +22,5 @@ for(const page of pages){
 }
 for(const file of readdirSync(`${root}/examples`)) JSON.parse(readFileSync(`${root}/examples/${file}`,'utf8'));
 JSON.parse(readFileSync(`${root}/source.schema.json`,'utf8'));
-console.log(`Checked ${pages.length} pages, ${links} local links/anchors, six JSON examples and schema.`);
+JSON.parse(readFileSync(`${root}/nas-webdav/source.json`,'utf8'));
+console.log(`Checked ${pages.length} pages, ${links} local links/anchors, six base examples, NAS source and schema.`);
