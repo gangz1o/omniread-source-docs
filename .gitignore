@@ -1,0 +1,10 @@
+node_modules/
+.sites-runtime/
+__pycache__/
+.DS_Store
+
+# Local hosting identity and generated output are not public source.
+.openai/
+dist/
+.env
+.env.*

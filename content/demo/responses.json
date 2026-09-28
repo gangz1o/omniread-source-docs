@@ -1,0 +1,404 @@
+{
+  "/novel/search": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/novel/books/demo",
+        "toc": "/novel/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/novel/explore": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/novel/books/demo",
+        "toc": "/novel/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/novel/books/demo": {
+    "title": "云间小记",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/novel/books/demo",
+    "toc": "/novel/books/demo/chapters",
+    "lastChapter": "第二章 晴天"
+  },
+  "/novel/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第一章 来信",
+        "url": "/novel/chapters/1"
+      },
+      {
+        "title": "第二章 晴天",
+        "url": "/novel/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/novel/chapters/1": {
+    "text": "窗外的雨停了。\n书桌上留着一封信。"
+  },
+  "/novel/chapters/2": {
+    "text": "清晨的阳光照进书房。\n他翻开了新的一页。"
+  },
+  "/comic/search": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/comic/books/demo",
+        "toc": "/comic/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/comic/explore": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/comic/books/demo",
+        "toc": "/comic/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/comic/books/demo": {
+    "title": "云间小记",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/comic/books/demo",
+    "toc": "/comic/books/demo/chapters",
+    "lastChapter": "第二章 晴天"
+  },
+  "/comic/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第一章 来信",
+        "url": "/comic/chapters/1"
+      },
+      {
+        "title": "第二章 晴天",
+        "url": "/comic/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/comic/chapters/1": {
+    "pages": [
+      "/assets/page-1.png",
+      "/assets/page-2.png"
+    ]
+  },
+  "/comic/chapters/2": {
+    "pages": [
+      "/assets/page-1.png",
+      "/assets/page-2.png"
+    ]
+  },
+  "/audio/search": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/audio/books/demo",
+        "toc": "/audio/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/audio/explore": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/audio/books/demo",
+        "toc": "/audio/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/audio/books/demo": {
+    "title": "云间小记",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/audio/books/demo",
+    "toc": "/audio/books/demo/chapters",
+    "lastChapter": "第二章 晴天"
+  },
+  "/audio/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第一章 来信",
+        "url": "/audio/chapters/1"
+      },
+      {
+        "title": "第二章 晴天",
+        "url": "/audio/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/audio/chapters/1": {
+    "audio": "/assets/tone.wav"
+  },
+  "/audio/chapters/2": {
+    "audio": "/assets/tone.wav"
+  },
+  "/account/search": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/account/books/demo",
+        "toc": "/account/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/account/explore": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/account/books/demo",
+        "toc": "/account/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/account/books/demo": {
+    "title": "云间小记",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/account/books/demo",
+    "toc": "/account/books/demo/chapters",
+    "lastChapter": "第二章 晴天"
+  },
+  "/account/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第一章 来信",
+        "url": "/account/chapters/1"
+      },
+      {
+        "title": "第二章 晴天",
+        "url": "/account/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/account/chapters/1": {
+    "text": "窗外的雨停了。\n书桌上留着一封信。"
+  },
+  "/account/chapters/2": {
+    "text": "清晨的阳光照进书房。\n他翻开了新的一页。"
+  },
+  "/key/search": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/key/books/demo",
+        "toc": "/key/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/key/explore": {
+    "books": [
+      {
+        "title": "云间小记",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/key/books/demo",
+        "toc": "/key/books/demo/chapters",
+        "lastChapter": "第二章 晴天"
+      }
+    ]
+  },
+  "/key/books/demo": {
+    "title": "云间小记",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/key/books/demo",
+    "toc": "/key/books/demo/chapters",
+    "lastChapter": "第二章 晴天"
+  },
+  "/key/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第一章 来信",
+        "url": "/key/chapters/1"
+      },
+      {
+        "title": "第二章 晴天",
+        "url": "/key/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/key/chapters/1": {
+    "text": "窗外的雨停了。\n书桌上留着一封信。"
+  },
+  "/key/chapters/2": {
+    "text": "清晨的阳光照进书房。\n他翻开了新的一页。"
+  },
+  "/video/search": {
+    "books": [
+      {
+        "title": "云间短剧",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/video/books/demo",
+        "toc": "/video/books/demo/chapters",
+        "lastChapter": "第 2 集 晴天"
+      }
+    ]
+  },
+  "/video/explore": {
+    "books": [
+      {
+        "title": "云间短剧",
+        "author": "演示作者",
+        "tags": [
+          "原创",
+          "测试"
+        ],
+        "intro": "用于书源开发联调的原创短篇。",
+        "cover": "/assets/page-1.png",
+        "url": "/video/books/demo",
+        "toc": "/video/books/demo/chapters",
+        "lastChapter": "第 2 集 晴天"
+      }
+    ]
+  },
+  "/video/books/demo": {
+    "title": "云间短剧",
+    "author": "演示作者",
+    "tags": [
+      "原创",
+      "测试"
+    ],
+    "intro": "用于书源开发联调的原创短篇。",
+    "cover": "/assets/page-1.png",
+    "url": "/video/books/demo",
+    "toc": "/video/books/demo/chapters",
+    "lastChapter": "第 2 集 晴天"
+  },
+  "/video/books/demo/chapters": {
+    "chapters": [
+      {
+        "title": "第 1 集 来信",
+        "url": "/video/chapters/1"
+      },
+      {
+        "title": "第 2 集 晴天",
+        "url": "/video/chapters/2"
+      }
+    ],
+    "next": ""
+  },
+  "/video/chapters/1": {
+    "video": "/assets/demo.mp4"
+  },
+  "/video/chapters/2": {
+    "video": "/assets/demo.mp4"
+  }
+}

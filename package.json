@@ -1,0 +1,1 @@
+{"name":"omniread-developer-docs","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","check":"node scripts/check.mjs","dev":"python3 -m http.server 4317 --bind 127.0.0.1 --directory dist"},"devDependencies":{"marked":"15.0.12"}}

@@ -1,0 +1,52 @@
+{
+  "bookSourceName": "云书阁演示 · 账号登录小说",
+  "bookSourceUrl": "https://demo.omniread.invalid/account/",
+  "bookSourceType": 0,
+  "bookSourceVersion": "1.0.0",
+  "bookSourceGroup": "开发示例",
+  "bookSourceComment": "仅用于开发联调；请运行配套 demo 并替换域名。内容为原创测试数据。",
+  "enabled": true,
+  "concurrentRate": "3/1000",
+  "header": "{\"Accept\":\"application/json\"}",
+  "searchUrl": "/account/search?q={{key}}&page={{page}}",
+  "exploreUrl": "演示作品::/account/explore?page={{page}}",
+  "ruleSearch": {
+    "bookList": "$.books[*]",
+    "name": "$.title",
+    "author": "$.author",
+    "kind": "$.tags[*]",
+    "intro": "$.intro",
+    "coverUrl": "$.cover",
+    "bookUrl": "$.url",
+    "lastChapter": "$.lastChapter"
+  },
+  "ruleExplore": {
+    "bookList": "$.books[*]",
+    "name": "$.title",
+    "author": "$.author",
+    "coverUrl": "$.cover",
+    "bookUrl": "$.url"
+  },
+  "ruleBookInfo": {
+    "name": "$.title",
+    "author": "$.author",
+    "intro": "$.intro",
+    "coverUrl": "$.cover",
+    "tocUrl": "$.toc"
+  },
+  "ruleToc": {
+    "chapterList": "$.chapters[*]",
+    "chapterName": "$.title",
+    "chapterUrl": "$.url",
+    "nextTocUrl": "$.next"
+  },
+  "ruleContent": {
+    "content": "$.text"
+  },
+  "omnireadLogin": {
+    "version": 1,
+    "type": "password",
+    "loginUrl": "https://demo.omniread.invalid/account/login",
+    "sessionUrl": "https://demo.omniread.invalid/account/session"
+  }
+}
