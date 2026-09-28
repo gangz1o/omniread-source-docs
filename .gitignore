@@ -8,3 +8,6 @@ __pycache__/
 dist/
 .env
 .env.*
+
+# Reviewed placeholder-only configuration for the public NAS example.
+!content/nas-webdav/.env.example
